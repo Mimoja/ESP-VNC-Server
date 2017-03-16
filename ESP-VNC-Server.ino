@@ -36,7 +36,7 @@ class VNCServer{
       client.print(0);
       client.print(0);
       client.print(0);
-      client.print(AUTH_VNC);
+      client.print(AUTH_NONE);
 
 
     }
