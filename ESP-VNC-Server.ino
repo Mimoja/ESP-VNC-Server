@@ -11,40 +11,45 @@ class VNCServer{
     };
     static const int MAX_NUM_CLIENTS = 8;
 
+    enum {
+        KEY_BACKSPACE       = 0XFF08,
+        KEY_TAB             = 0XFF09,
+        KEY_RETURN          = 0XFF0D,
+        KEY_ESCAPE          = 0XFF1B,
+        KEY_INSERT          = 0XFF63,
+        KEY_DELETE          = 0XFFFF,
+        KEY_HOME            = 0XFF50,
+        KEY_END             = 0XFF57,
+        KEY_PAGE_UP         = 0XFF55,
+        KEY_PAGE_DOWN       = 0XFF56,
+        KEY_LEFT            = 0XFF51,
+        KEY_UP              = 0XFF52,
+        KEY_RIGHT           = 0XFF53,
+        KEY_DOWN            = 0XFF54,
+        KEY_F1              = 0XFFBE,
+        KEY_F2              = 0XFFBF,
+        KEY_F3              = 0XFFC0,
+        KEY_F4              = 0XFFC1,
+        KEY_F5              = 0XFFC2,
+        KEY_F6              = 0XFFC3,
+        KEY_F7              = 0XFFC4,
+        KEY_F8              = 0XFFC5,
+        KEY_F9              = 0XFFC6,
+        KEY_F10             = 0XFFC7,
+        KEY_F11             = 0XFFC8,
+        KEY_F12             = 0XFFC9,
+        KEY_SHIFT_L         = 0XFFE1,
+        KEY_SHIFT_R         = 0XFFE2,
+        KEY_CONTROL_L       = 0XFFE3,
+        KEY_CONTROL_R       = 0XFFE4,
+        KEY_META_L          = 0XFFE7,
+        KEY_META_R          = 0XFFE8,
+        KEY_ALT_L           = 0XFFE9,
+        KEY_ALT_R           = 0XFFEA,
+    };
     /** Key events: 
-     *            +-----------------+--------------------+
-                 | Key name        | Keysym value (hex) |
-                 +-----------------+--------------------+
-                 | BackSpace       | 0xff08             |
-                 | Tab             | 0xff09             |
-                 | Return or Enter | 0xff0d             |
-                 | Escape          | 0xff1b             |
-                 | Insert          | 0xff63             |
-                 | Delete          | 0xffff             |
-                 | Home            | 0xff50             |
-                 | End             | 0xff57             |
-                 | Page Up         | 0xff55             |
-                 | Page Down       | 0xff56             |
-                 | Left            | 0xff51             |
-                 | Up              | 0xff52             |
-                 | Right           | 0xff53             |
-                 | Down            | 0xff54             |
-                 | F1              | 0xffbe             |
-                 | F2              | 0xffbf             |
-                 | F3              | 0xffc0             |
-                 | F4              | 0xffc1             |
-                 | ...             | ...                |
-                 | F12             | 0xffc9             |
-                 | Shift (left)    | 0xffe1             |
-                 | Shift (right)   | 0xffe2             |
-                 | Control (left)  | 0xffe3             |
-                 | Control (right) | 0xffe4             |
-                 | Meta (left)     | 0xffe7             |
-                 | Meta (right)    | 0xffe8             |
-                 | Alt (left)      | 0xffe9             |
-                 | Alt (right)     | 0xffea             |
-                 +-----------------+--------------------+
-                 The interpretation of keysyms is a complex area.  In order to be as
+
+      The interpretation of keysyms is a complex area.  In order to be as
    widely interoperable as possible, the following guidelines should be
    followed:
 
