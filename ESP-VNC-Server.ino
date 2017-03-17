@@ -264,11 +264,8 @@ class VNCServer{
                  read16(client);
                  int key = read16(client)<< 16 | read16(client);  
                  println("Got Key");
-                 if(key & 0xFF00 )Serial.print(key);
-                 else{
-                  Serial.print("0x");
-                  Serial.println(key, HEX);
-                 }
+                 Serial.print("0x");
+                 Serial.println(key, HEX);
               }
               else if (type == 5) {
                 println("Got PointerEvent");
@@ -292,6 +289,8 @@ class VNCServer{
               }
         }
         }
+        println("Client disconnected");
+        client.stop();
       }
     
   public:
